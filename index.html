@@ -1,0 +1,38 @@
+<html>
+  <head>
+      <title>Bienvenid@ a Desenredar La Pita: Un Fundamento. Por favor espera a que cargue la página :)</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+   <a-scene>
+
+<a-entity id="rig" movement-controls kinematic-body position="2.192 0 2">
+  <a-entity id="camera" camera position="-7 0 -4" look-controls cursor="rayOrigin: mouse"></a-entity>
+</a-entity>
+
+ <a-image src="./t2.png" position="-4 0 -10" scale="11 5 5"  rotation="0 0 0" shadow
+ animation="property: position; dur: 5000; loop: true; easing: linear; dir:alternate; to: -4 0.00000000001
+  -10;" navigate-on-click="url: https://linnajuanita.github.io/A0/"></a-image>
+<a-sky src="./back.png"></a-sky>
+<a-sound src="./s1.mp3" autoplay="true" position="0 2 5" volume="4" loop="true"></a-sound>
+
+<script>
+  AFRAME.registerComponent('navigate-on-click', {
+      schema: {
+          url: { default: '' }
+      },
+
+      init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener('click', function () {
+              window.location.href = data.url;
+          });
+      }
+  });        
+</script>
+
+</a-scene>
+</body>
+</html>
